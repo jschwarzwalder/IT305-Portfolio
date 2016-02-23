@@ -5,11 +5,13 @@
 $errors = [];
 $missing = [];
 $coding = false;
+$reading = false;
+$general = false;
 $summer = false;
 $fname="";
 $lname="";
 $phone="";
-$comment="";
+$comment="  ";
 		   
 ?>
 
@@ -52,7 +54,7 @@ $comment="";
             <div class="col-xs-12 col-lg-offest-1 col-lg-5">
 			<p><img src="pcls.gif" class="text-center "></p>
 			</div>
-			<div class="col-xs-12  col-lg-5">
+			<div class="col-xs-12  col-lg-6">
                 <h2 class="text-center">Volunteer @ Pierce County Library</h2>
             </div>
         </div>
@@ -64,8 +66,8 @@ $comment="";
 			
 			<?php
 			if (isset($_POST['send'])) {
-    $expected = ['fname', 'lname', 'phone', 'email', 'summer','coding', 'comments'];
-    $required = ['fname', 'lname','phone', 'email', 'comments' ];
+    $expected = ['fname', 'lname', 'phone', 'email', 'summer','coding', 'reading', 'comments'];
+    $required = ['fname', 'lname','phone', 'email' ];
     $recipient = 'jschwarzwalder@piercecountylibrary.org';
 	$subject = 'Emerald Ridge Volunteer';
 	$headers = [];
@@ -89,35 +91,49 @@ $comment="";
 		if ($isValid) {
 		   	$fname = trim($_POST['fname']);
 			$lname = trim($_POST['lname']);
-			$phone = trim($_POST['phone']);
+			$phone = $_POST['phone'];
 			$email = trim($_POST['email']);
-			if (!empty($_POST['summer'])) {
-				$summer = trim($_POST['summer']);
+			if (!empty($_POST['summer']) && $_POST['summer'] == 'on' ) {
+				$summer = true;
 			  } else {
 				$summer = false;
 			  }
-			if (!empty($_POST['coding'])) {
-				$coding = trim($_POST['coding']);
+			if (!empty($_POST['coding']) && $_POST['coding'] == 'on') {
+				$coding = true;
 			  } else {
 				$coding = false;
+			  }
+			if (!empty($_POST['reading']) && $_POST['reading'] == 'on') {
+				$reading = true;
+			  } else {
+				$reading = false;
+			  }
+			if (!empty($_POST['general']) && $_POST['general'] == 'on') {
+				$general = true;
+			  } else {
+				$general = false;
 			  }
 			
 				if (!empty($_POST['comments'])) {
 				$comments = trim($_POST['comments']);
 			  } else {
-				$comments = "";
+				$comments = " ";
 			  }
-						
+			//echo "<p>$phone</p>";			
 			$fname = mysqli_real_escape_string($cnxn, $fname);
 			$lname = mysqli_real_escape_string($cnxn, $lname);
 			$phone = mysqli_real_escape_string($cnxn, $phone);
+			//echo "<p>$phone</p>";
 			$email = mysqli_real_escape_string($cnxn, $email);
 			$summer = mysqli_real_escape_string($cnxn, $summer);
 			$coding = mysqli_real_escape_string($cnxn, $coding);
+			$reading = mysqli_real_escape_string($cnxn, $reading);
+			$general = mysqli_real_escape_string($cnxn, $general);
 			$comments = mysqli_real_escape_string($cnxn, $comments);
 		   
 		   //Send to Database
-		   $sql = "INSERT INTO volunteer(fname, lname, phone, email, summer, coding, comment ) VALUES ('$fname','$lname','$phone','$email','$summer','$coding','$comments')";
+		   //echo "<p>$phone</p>";
+		   $sql = "INSERT INTO volunteer(fname, lname, phone, email, summer, coding, reading, general, comment ) VALUES ('$fname','$lname','$phone','$email','$summer','$coding', '$reading', '$general','$comments')";
 			$result = @mysqli_query($cnxn, $sql);
 			if (!$result) {
 			   echo "<p>Error: " . mysqli_error($cnxn) . "</p>";
@@ -134,7 +150,7 @@ $comment="";
 					}
 			}
 		}
-	  
+	  echo "<p>$phone</p>";
 
 			?>
 			<?php if ($_POST && ($suspect || isset($errors['mailfail']))) : ?>
@@ -197,7 +213,7 @@ $comment="";
 					
 					<div class="form-group">
 						
-							<div class="col-xs-12">
+							
 							<p>
 								<label for="email" class="control-label">
 							<?php if ($missing && in_array('email', $missing)) : ?>
@@ -234,7 +250,7 @@ $comment="";
 					<?php
 					//Validate Volunteer Opportunities
 					
-						if ($_POST && empty($_POST['summer']) && empty($_POST['coding']) && empty($_POST['food'])) {
+						if ($_POST && empty($_POST['summer']) && empty($_POST['coding']) && empty($_POST['reading']) && empty($_POST['general'])) {
 							echo '<label class="formError text-center">Please select a Volunteer Opportunity.</label>';
 							$isValid = false;
 						} else {
@@ -244,6 +260,13 @@ $comment="";
 							}
 							if (!empty($_POST['coding'])) {
 								$coding= $_POST['coding'];
+							}
+							if (!empty($_POST['reading'])) {
+								$reading = $_POST['reading'];
+								
+							}
+							if (!empty($_POST['general'])) {
+								$general= $_POST['general'];
 							}
 							
 						}
@@ -271,6 +294,26 @@ $comment="";
 								   >Code Mentor
 								   </label>
 								   <p>Mentor youth in MIT Scratch and Robotics. Help set up programs. Model Problem Solving. </p>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
+								   <label for="reading">
+								   <input type="checkbox" name="reading" id="reading"
+								   <?php if ($reading) : ?>
+									checked
+									<?php endif; ?>
+								   > Reading Buddies
+								   </label>
+								   <p>One evening a week, read stories and play educational games with K-2nd grade beginning readers.</p>
+								   </div>
+						   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
+								   <label for="general">
+								   <input type="checkbox" name="general" id="general"
+								   <?php if ($general) : ?>
+									checked
+									<?php endif; ?>
+								   >General Volunteer
+								   </label>
+								   <p>Assist in the branch with things like dusting shelves, cutting out materials, and cleaning books.</p>
 							</div>
 								   
 						   </div>
@@ -300,10 +343,12 @@ $comment="";
 							</p>
 						</div>
 					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 					<p>
-						* = Required field<br><br>
-						<input type="submit" name="send" id="send" value="Send Comments">
+						* = Required field
+						<input type="submit" name="send" id="send" value="Send Application" class="pull-right">
 					</p>
+					</div>
 				</div>
 			
 				</div>
