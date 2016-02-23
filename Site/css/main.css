@@ -154,6 +154,7 @@ a:after {
 /* Header Wrap */
 #headerwrap {
 	background: url(../img/header-bg.jpg) no-repeat center top;
+	background-color: navy;
 	margin-top: 60px;
 	padding-top:140px;
 	text-align:center;
@@ -161,6 +162,7 @@ a:after {
 	background-position: center center;
 	min-height: 500px;
 	width: 100%;
+	vertical-align: bottom;
 	
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -179,6 +181,11 @@ a:after {
 }
 
 #headerwrap h3 {
+	font-size: 20px;
+	color: white;
+}
+
+#headerwrap img{
 	font-size: 20px;
 	color: white;
 }
