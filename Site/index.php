@@ -14,10 +14,11 @@
 	$phone="";
 	$email="";
 	$message="";
+	$thanks = false;
 					   
 	//Form has been submitted 
 	if (isset($_POST['submit'])) {
-		
+		echo "<script> alert('I have submitted');</script>";
 		//Where did we come from?
 		$from = $_SERVER['HTTP_REFERER'];
 	  
@@ -27,20 +28,22 @@
 			$isValid = false;
 		 } else {
 			$isValid = true;
+			echo "I came from greenrivertech.net";
 			
 			//Connect to database
-			require ("../../../db.php");
+			require ("../../db.php");
+			echo "I connected to database";
 	
 			//Validate name
 			if (!empty($_POST['name'])) {
 				if (ctype_alpha($_POST['name'])) {
-					$fname = $_POST['name'];
+					$name = $_POST['name'];
 					$Er_name=false;
 				} else {
 					$isValid = false;
 					$Er_name=true;
 				}
-				
+				echo $name;
 			} else {
 				$Er_name=true;
 				$isValid = false;
@@ -58,7 +61,7 @@
 					$Er_email=true;
 					
 				}
-
+				echo $email;
 			} else {
 				$Er_email=true;
 				$isValid = false;
@@ -66,8 +69,10 @@
 			
 			//Validate phone
 			if (!empty($_POST['phone'])) {
+				$phone = $_POST['phone'];
 				$Er_phone=false;
 				$isValid = true;
+				echo $phone;
 			} 
 			else {
 				$Er_phone=true;
@@ -76,8 +81,10 @@
 			
 			//Validate message
 			if (!empty($_POST['message'])) {
+				$message = $_POST['message'];
 				$Er_message=false;
 				$isValid = true;
+				echo $message;
 			}else {
 				$Er_message=true;
 				$isValid = false;
@@ -446,7 +453,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     
-					<form name="sentMessage" id="contactForm" action="<?= $_SERVER['PHP_SELF']; ?>" novalidate>
+					<form id="contactForm" action="<?= $_SERVER['PHP_SELF']; ?>" method="post" >
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
@@ -490,7 +497,7 @@
 						<?php endif; ?>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                                <button type="submit" name="submit" id="submit" class="btn btn-success btn-lg">Send</button>
                             </div>
                         </div>
                     </form>
