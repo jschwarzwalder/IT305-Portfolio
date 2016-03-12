@@ -477,7 +477,25 @@
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 
-    <!-- Contact Form JavaScript -->
+    <!-- Phone Number Validation JavaScript -->
+	<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+	<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+	
+	<script>
+	jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	  });
+	  $( "#contactForm" ).validate({
+		rules: {
+		  field: {
+			required: true,
+			phoneUS: true
+		  }
+		}
+	  });
+	</script>
+	<!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
 
@@ -497,6 +515,8 @@
 	  $('.photos').on('mouseenter', 'li', showPhotos);
 	  $('.photos').on('mouseleave', 'li', showPhotos);
 	});
+	
+	
 	</script>
 
 </body>
