@@ -16,104 +16,7 @@
 	$message="";
 	$thanks = false;
 					   
-	//Form has been submitted 
-	if (isset($_POST['submit'])) {
-		echo "<script> alert('I have submitted');</script>";
-		//Where did we come from?
-		$from = $_SERVER['HTTP_REFERER'];
-	  
-		//Make sure we came from our own site
-		if (!strstr($from, "jschwarzwalder.greenrivertech.net")) {
-			die("Error Processing Form");
-			$isValid = false;
-		 } else {
-			$isValid = true;
-			echo "I came from greenrivertech.net";
-			
-			//Connect to database
-			require ("../../db.php");
-			echo "I connected to database";
 	
-			//Validate name
-			if (!empty($_POST['name'])) {
-				if (ctype_alpha($_POST['name'])) {
-					$name = $_POST['name'];
-					$Er_name=false;
-				} else {
-					$isValid = false;
-					$Er_name=true;
-				}
-				echo $name;
-			} else {
-				$Er_name=true;
-				$isValid = false;
-				
-			}
-			
-			//Validate email
-			
-			if (!empty($_POST['email'])) {
-				if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-					$email = $_POST['email'];
-					$Er_email=false;
-				} else {
-					$isValid = false;
-					$Er_email=true;
-					
-				}
-				echo $email;
-			} else {
-				$Er_email=true;
-				$isValid = false;
-			}
-			
-			//Validate phone
-			if (!empty($_POST['phone'])) {
-				$phone = $_POST['phone'];
-				$Er_phone=false;
-				$isValid = true;
-				echo $phone;
-			} 
-			else {
-				$Er_phone=true;
-				$isValid = false;
-			}
-			
-			//Validate message
-			if (!empty($_POST['message'])) {
-				$message = $_POST['message'];
-				$Er_message=false;
-				$isValid = true;
-				echo $message;
-			}else {
-				$Er_message=true;
-				$isValid = false;
-			}
-			
-			//Send to Database
-			if ($isValid) {
-				
-				//Escape the data
-				$name = mysqli_real_escape_string($cnxn, $name);
-				$phone = mysqli_real_escape_string($cnxn, $phone);
-				$email = mysqli_real_escape_string($cnxn, $email);
-				$message = mysqli_real_escape_string($cnxn, $message);
-				
-				//Define the query
-				 $sql = "INSERT INTO `Portfolio_Contacts` (name, phone, email, message)
-						VALUES ( '$name', '$phone', '$email', $message)";
-				 $result = @mysqli_query($cnxn, $sql);
-				if (!$result) {
-					echo "<p>Error: " . mysqli_error($cnxn) . "</p>";
-				} else {
-					$thanks = true;
-				}
-			}
-				
-				
-		}
-		
-	}
 	 
 		
 	
@@ -130,7 +33,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Jami Schwarzwalder</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -453,11 +356,11 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     
-					<form id="contactForm" action="<?= $_SERVER['PHP_SELF']; ?>" method="post" >
+					<form id="contactForm" action="mail/contact_me.php" method="post" > <!--<?= $_SERVER['PHP_SELF']; ?>-->
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name." value="<?php echo htmlentities($name); ?>">
+                                <input type="text" class="form-control" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name." value="<?php echo htmlentities($name); ?>">
                                 <?php if ($_POST && $Er_name) : ?>
 									<p class="help-block text-danger">Please enter your name.</p>
 								<?php endif; ?>
@@ -467,7 +370,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address." value="<?php echo htmlentities($email); ?>">
+                                <input type="email" class="form-control" placeholder="Email Address" name="email" id="email" required data-validation-required-message="Please enter your email address." value="<?php echo htmlentities($email); ?>">
                                 <?php if ($_POST && $Er_name) : ?>
 								<p class="help-block text-danger">Please enter your email address.</p>
 								<?php endif; ?>
@@ -476,7 +379,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number." value="<?php echo htmlentities($phone); ?>">
+                                <input type="tel" class="form-control" placeholder="Phone Number" name="phone" id="phone" required data-validation-required-message="Please enter your phone number." value="<?php echo htmlentities($phone); ?>">
                                 <?php if ($_POST && $Er_phone) : ?>
 								<p class="help-block text-danger">Please enter your phone number.</p>
 								<?php endif; ?>
@@ -485,16 +388,16 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message." value="<?php echo htmlentities($message); ?>"></textarea>
+                                <textarea rows="5" class="form-control" placeholder="Message" name="message" id="message" required data-validation-required-message="Please enter a message." value="<?php echo htmlentities($message); ?>"></textarea>
                                 <?php if ($_POST && $Er_message) : ?>
 								<p class="help-block text-danger">Please enter a message.</p>
 								<?php endif; ?>
                             </div>
                         </div>
                         <br>
-						<?php if ($thanks) : ?>
-							<div id="success"><p>Thank you for reaching out. I will respond to you shortly.</p></div>
-						<?php endif; ?>
+						
+							<div id="success"></div>
+						
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <button type="submit" name="submit" id="submit" class="btn btn-success btn-lg">Send</button>
