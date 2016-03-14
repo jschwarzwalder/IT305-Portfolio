@@ -4,11 +4,7 @@
 	 *  Portfolio - See Contact Messages
 	 */
 
-	session_start();
-
-if(!isset($_SESSION['jschwarzwalder_username']) && $_SERVER['REQUEST_URI'] != 'login.php') {
-    header('Location: login.html');
-}
+	
 	 
 ?>
 <!DOCTYPE html>
@@ -58,7 +54,6 @@ if(!isset($_SESSION['jschwarzwalder_username']) && $_SERVER['REQUEST_URI'] != 'l
 	
 		<div class="row">
 			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 ">
-				<p class="pull-right"><a href="logout.php">Logout</a></p>
 			<!-- Messages from Contact Form -->
 			<h3>Contact Form</h3>
 			<?php
@@ -110,12 +105,17 @@ if(!isset($_SESSION['jschwarzwalder_username']) && $_SERVER['REQUEST_URI'] != 'l
 		</div>
 	</div>
 </div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="//maxcdn.bootstrapcdn.com/3.3.6/js/bootstrap.min.js"></script>
-	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
-   
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="//maxcdn.bootstrapcdn.com/3.3.6/js/bootstrap.min.js"></script>
+		<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+	   
+		<script>
+		   $('#example').DataTable();    
+		 </script>
+
+
 	<script>
 		$('#contact_me').DataTable();    
 	</script>
