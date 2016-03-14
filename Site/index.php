@@ -15,11 +15,7 @@
 	$email="";
 	$message="";
 	$thanks = false;
-					   
-	
-	 
-		
-	
+
 ?>
 			
 <!DOCTYPE html>
@@ -35,23 +31,7 @@
 
     <title>Jami Schwarzwalder</title>
 
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+   
 
 </head>
 
@@ -87,6 +67,9 @@
                     </li>
 					<li class="page-scroll">
                         <a href="#resume">Resume</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="#skills">Skills</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
@@ -207,11 +190,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>I'm web designer & front-end developer with experience leading projects and working with end users of various skill levels. <br>I'm interested in all kinds of web development, but my major focus is on designing end user experiences on web, mobile & tablet interfaces.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p> I also have skills in other fields like instruction, usability and project management.<br> I care about my team mates, and strive to make my project great through encouraging contributions from everyone. <br>I am a life long learner, and am looking for my next challenge.
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p>I'm web designer & front-end developer with experience leading projects and working with end users of various skill levels.
+					<br>I'm interested in all kinds of web development, but my major focus is on designing end user experiences on web, mobile & tablet interfaces.</p>
+					<hr >
+                    <p> I also have skills in other fields like instruction, usability and project management.
+					<br> I care about my team mates, and strive to make my project great through encouraging contributions from everyone.
+					<br>I am a life long learner, and am looking for my next challenge.
 					</p>
                 </div>
                
@@ -344,13 +329,49 @@
 	</div><!--/.container -->
 	</section>
 	
-    <!-- Contact Section -->
-    <section class="success" id="contact">
+    
+	<section  class="success"  id="skills" name="skills">
+		<div class="container ">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Skills</h2>
+                    <hr class="star-light">
+					
+						<div class="report-card treehouse"></div>
+						<div class="report-card codeschool"></div>
+						<div><script>var codecademy = require('codecademy')
+ 
+						/**
+						 * This should be the user name from the user's profile.
+						 * It will resolve to http://www.codecademy.com/[user]
+						 */
+						var user = "eiseldora"
+						 
+						/**
+						 * This should be the unique course name.
+						 * If you hover a card on a user's profile, your browser will show the url.
+						 * It will resolve to http://www.codecademy.com/tracks/[course]
+						 */
+						var course = "CourseName"
+						 
+						codecademy.getProgress(user,course,function(e,progress) {
+						  if(e.message === "EEUSER") return console.log("User Does Not Exist!")
+						  if(e) return console.log(e)
+						  console.log("Jami Schwarzwalder has completed "+progress+"% of "+course)
+						})
+						</script></div>
+			
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact Section -->
+    <section  id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Contact Me</h2>
-                    <hr class="star-light">
+                    <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
@@ -464,9 +485,29 @@
         </a>
     </div>
 
-  
+   <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Report Card CSS - To display Treehouse Badges -->
+	<link rel="stylesheet" href="js/reportcard/css/badges.css">
 
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <!-- jQuery -->
+	
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -481,7 +522,45 @@
 	<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 	<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 	
+
+	<!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+	
+	<!-- Report Card JS - To display Treehouse Badges -->
+	<script src="js/reportcard/js/reportcard.js"></script>
+	
+	
 	<script>
+		
+	 function  showPhotos (){  
+	   $(this).find('span').slideToggle(); 
+	 };
+	 
+	
+	$(document).ready(function() {
+	  $('#tour').on('click', 'button', function() {
+		$('.photos').slideToggle();
+	  });
+	 
+	  $('.photos').on('mouseenter', 'li', showPhotos);
+	  $('.photos').on('mouseleave', 'li', showPhotos);
+	  
+	   // Using reportcard.js with Treehouse
+	$('.report-card.treehouse').reportCard({
+		userName: 'jamischwarzwalder',
+		site: 'treehouse',
+		badgesAmount: 7
+	});
+	$('.report-card.codeschool').reportCard({
+		userName: 'Eiseldora',
+		site: 'codeschool',
+		badgesAmount: 7
+	});
+		
 	jQuery.validator.setDefaults({
 		debug: true,
 		success: "valid"
@@ -494,26 +573,8 @@
 		  }
 		}
 	  });
-	</script>
-	<!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+	  
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-	
-	<script>
-	 function  showPhotos (){  
-	   $(this).find('span').slideToggle(); 
-	 }
-
-	$(document).ready(function() {
-	  $('#tour').on('click', 'button', function() {
-		$('.photos').slideToggle();
-	  });
-	 
-	  $('.photos').on('mouseenter', 'li', showPhotos);
-	  $('.photos').on('mouseleave', 'li', showPhotos);
 	});
 	
 	
