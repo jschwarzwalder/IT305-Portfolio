@@ -77,6 +77,7 @@ if(!isset($_SESSION['jschwarzwalder_username']) && $_SERVER['REQUEST_URI'] != 'l
 				echo '<table width="100%" class="table table-bordered table-striped" id="contact_me">';
 				echo '<thead>';
 				echo '<tr><th class="">Name</th>';
+				echo '<th class="">Sent</th>';
 				echo '<th class="">Phone</th><th class="">Email</th>';
 				echo '<th class=" hidden-xs">Message</th>';
 				echo '</tr>';
@@ -87,13 +88,14 @@ if(!isset($_SESSION['jschwarzwalder_username']) && $_SERVER['REQUEST_URI'] != 'l
 
 
 					$name = htmlentities($row['name']);
-					$sent = htmlentities($row['sent']);
+					$sent = date('n/j/Y', strtotime(htmlentities($row['sent'])));
 					$message = htmlentities($row['message']);
 					$phone = htmlentities($row['phone']);
 					$email = htmlentities($row['email']);
 
 					//Print rows
 					echo  "<tr><td> $name </td>";
+					echo "<td> $sent</td>";
 					echo "<td> $phone</td>";
 					echo "<td> $email</td>";
 					echo "<td class='hidden-xs'>$message</td>";
