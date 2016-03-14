@@ -359,7 +359,9 @@ header .intro-text .skills {
     background: #166678;
 }
 
-
+.help-block {
+    color:#6C4634;
+}
 ::-webkit-input-placeholder {
    color:#166678;
 }
