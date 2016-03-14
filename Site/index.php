@@ -30,6 +30,21 @@
     <meta name="author" content="">
 
     <title>Jami Schwarzwalder</title>
+	
+	<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Report Card CSS - To display Treehouse Badges -->
+	<link rel="stylesheet" href="js/reportcard/css/badges.css">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
 
    
 
@@ -100,7 +115,7 @@
 
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
-        <div class="container">
+        <div class="container desc">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Portfolio</h2>
@@ -367,7 +382,7 @@
 	</section>
 	<!-- Contact Section -->
     <section  id="contact">
-        <div class="container">
+        <div class="container desc">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Contact Me</h2>
@@ -381,7 +396,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name." value="<?php echo htmlentities($name); ?>">
+                                <input type="text" class="form-control desc" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name." value="<?php echo htmlentities($name); ?>">
                                 <?php if ($_POST && $Er_name) : ?>
 									<p class="help-block text-danger">Please enter your name.</p>
 								<?php endif; ?>
@@ -391,7 +406,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" name="email" id="email" required data-validation-required-message="Please enter your email address." value="<?php echo htmlentities($email); ?>">
+                                <input type="email" class="form-control desc" placeholder="Email Address" name="email" id="email" required data-validation-required-message="Please enter your email address." value="<?php echo htmlentities($email); ?>">
                                 <?php if ($_POST && $Er_name) : ?>
 								<p class="help-block text-danger">Please enter your email address.</p>
 								<?php endif; ?>
@@ -400,7 +415,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" name="phone" id="phone" required data-validation-required-message="Please enter your phone number." value="<?php echo htmlentities($phone); ?>">
+                                <input type="tel" class="form-control desc" placeholder="Phone Number" name="phone" id="phone" required data-validation-required-message="Please enter your phone number." value="<?php echo htmlentities($phone); ?>">
                                 <?php if ($_POST && $Er_phone) : ?>
 								<p class="help-block text-danger">Please enter your phone number.</p>
 								<?php endif; ?>
@@ -409,7 +424,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" name="message" id="message" required data-validation-required-message="Please enter a message." value="<?php echo htmlentities($message); ?>"></textarea>
+                                <textarea rows="5" class="form-control desc" placeholder="Message" name="message" id="message" required data-validation-required-message="Please enter a message." value="<?php echo htmlentities($message); ?>"></textarea>
                                 <?php if ($_POST && $Er_message) : ?>
 								<p class="help-block text-danger">Please enter a message.</p>
 								<?php endif; ?>
@@ -421,7 +436,7 @@
 						
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" name="submit" id="submit" class="btn btn-success btn-lg">Send</button>
+                                <button type="submit" name="submit" id="submit" class="btn btn-outline btn-lg">Send</button>
                             </div>
                         </div>
                     </form>
@@ -484,20 +499,6 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-
-   <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- Report Card CSS - To display Treehouse Badges -->
-	<link rel="stylesheet" href="js/reportcard/css/badges.css">
-
-    <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
