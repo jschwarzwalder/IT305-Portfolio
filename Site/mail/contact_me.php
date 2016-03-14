@@ -14,7 +14,7 @@ if(empty($_POST['name'])  		||
  $from = $_SERVER['HTTP_REFERER'];
 
  //Make sure we came from our own site
- if (!strstr($from, "jschwarzwalder.greenrivertech.net")) {
+ if (!strstr($from, "jschwarzwalder.greenrivertech.net") && !strstr($from, "jschwarzwalder.neocities.org")) {
 	 echo "Error Processing Form";
 	 return false;
   } else {
