@@ -206,12 +206,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p>I'm web designer & front-end developer with experience leading projects and working with end users of various skill levels.
-					<br>I'm interested in all kinds of web development, but my major focus is on designing end user experiences on web, mobile & tablet interfaces.</p>
+                    <p>I'm web designer & front-end developer with experience leading projects and working with end users of various skill levels.</p>
+					<p>I'm interested in all kinds of web development, but my major focus is on designing end user experiences on web, mobile & tablet interfaces.</p>
 					<hr >
-                    <p> I also have skills in other fields like instruction, usability and project management.
-					<br> I care about my team mates, and strive to make my project great through encouraging contributions from everyone.
-					<br>I am a life long learner, and am looking for my next challenge.
+                    <p> I also have skills in other fields like instruction, usability and project management.</p>
+					<p> I care about my team mates, and strive to make my project great through encouraging contributions from everyone.</p>
+					<p>I am a life long learner, and am looking for my next challenge.
 					</p>
                 </div>
                
@@ -354,27 +354,7 @@
 					
 						<div class="report-card treehouse"></div>
 						<div class="report-card codeschool"></div>
-						<div><script>var codecademy = require('codecademy')
- 
-						/**
-						 * This should be the user name from the user's profile.
-						 * It will resolve to http://www.codecademy.com/[user]
-						 */
-						var user = "eiseldora"
-						 
-						/**
-						 * This should be the unique course name.
-						 * If you hover a card on a user's profile, your browser will show the url.
-						 * It will resolve to http://www.codecademy.com/tracks/[course]
-						 */
-						var course = "CourseName"
-						 
-						codecademy.getProgress(user,course,function(e,progress) {
-						  if(e.message === "EEUSER") return console.log("User Does Not Exist!")
-						  if(e) return console.log(e)
-						  console.log("Jami Schwarzwalder has completed "+progress+"% of "+course)
-						})
-						</script></div>
+						
 			
 				</div>
 			</div>
@@ -407,7 +387,7 @@
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email Address</label>
                                 <input type="email" class="form-control desc" placeholder="Email Address" name="email" id="email" required data-validation-required-message="Please enter your email address." value="<?php echo htmlentities($email); ?>">
-                                <?php if ($_POST && $Er_name) : ?>
+                                <?php if ($_POST && $Er_email) : ?>
 								<p class="help-block text-danger">Please enter your email address.</p>
 								<?php endif; ?>
                             </div>
@@ -470,13 +450,7 @@
                            <li>
                                 <a href="http://2015.teensummerchallenge.org/" class="btn-social btn-outline"  target="_blank"><i class="fa fa-fw fa-wordpress"></i></a>
                             </li>
-							<li>
-                                <a href="https://teamtreehouse.com/jamischwarzwalder" class="btn-social btn-outline"  target="_blank"><i class="fa fa-fw fa-code"></i></a>
-                            </li>
-                       
-							<li>
-                                <a href="http://greenriverdevs.slack.com/" class="btn-social btn-outline"  target="_blank"><i class="fa fa-fw fa-slack"></i></a>
-                            </li>
+							
                         </ul>
                     </div>
                    
