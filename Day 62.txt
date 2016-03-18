@@ -1,0 +1,14 @@
+Github Streak
+
+I was told that employers look at your github activity to get determine whether to interview you. So when I was given the opportunity to add projects to my github I was excited to begin building a portfolio of activity. 
+
+When accessing Github from a desktop computer, my profile features a Contributions chart that not only shows how active I've been in repositories, but prominently displays my "streak". This streak is the number of consecutive days that I've added to the main branch or a branch that has been merged into the master. Contributions must be made public to count towards this streak. I've learned that filing a bug or closing a bug will count as activity, but if I contribute to a private repository at a company I work with, then any commits do not count for this streak.
+
+What I'm failing to understand, is the purpose of this mechanic. It seems to reward programmers for never taking a day off. It also discourages working on a collaborative project since anything committed to a branch doesn't count towards this streak unless it is added to the main branch. 
+
+As of writing this I have a 61 day streak. I've been sick with a cold, so I've not been able to write anything today. If I commit this, as my commit for the day what does this say of my skills as a programmer? I'm new to coding so a 62 day streak only shows that I work hard. Is it better to push small changes, or work locally and then push when you have a feature working? I've been going out of my way some days to find something to commit, just to keep my streak. 
+
+Is this meaningless, or is there some value I'm not understanding?
+
+Jami Schwarzwalder
+
