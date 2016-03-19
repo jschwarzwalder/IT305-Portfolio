@@ -508,3 +508,7 @@ footer .footer-below {
     width: 100%;
     color:black;
     box-shadow: 2px 2px 2.5px black;
+}
+.main section {
+	padding: 0 0;
+}

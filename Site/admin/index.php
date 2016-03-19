@@ -120,7 +120,7 @@ if(!isset($_SESSION['jschwarzwalder_username']) && $_SERVER['REQUEST_URI'] != 'l
 	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
    
 	<script>
-		$('#contact_me').DataTable();    
+		$('#contact_me').DataTable({"aaSorting": [[ 1, "desc" ]]});    
 	</script>
 
 </body>
