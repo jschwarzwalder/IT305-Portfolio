@@ -125,7 +125,7 @@
                     <a href="http://teambinary.greenrivertech.net/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-plus-circle fa-3x"></i>
 								<p>Kent Food Bank - Nonprofit.<br>Used: Bootstrap, PHP/MySQL, HTML5</p>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                     <a href="http://thecatspajamas.neocities.org/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-plus-circle fa-3x"></i>
 								<p>Cat's Pajamas - Indie Game Team.<br>Used: Bootstrap, HTML5</p>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                     <a href="http://www.wyewood.org/wp/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-plus-circle fa-3x"></i>
 								<p>Wyewood - Nonprofit.<br>Used: Wordpress, HTML5</p>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                     <a href="http://dev.gogrowabroad.com/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-plus-circle fa-3x"></i>
 								<p>Culture Scout - Startup.<br>Used: Wordpress, PHP</p>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                     <a href="http://sh2015christmas.neocities.org/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-plus-circle fa-3x"></i>
 								<p>Christmas Card - Nonprofit.<br>Used: HTML, CSS</p>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                     <a href="http://arts-unframed.weebly.com/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-plus-circle fa-3x"></i>
 								<p>Arts Unframed - Educational Event.<br>Used: HTML5</p>
                             </div>
                         </div>

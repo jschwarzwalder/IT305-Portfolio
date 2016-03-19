@@ -245,7 +245,7 @@ header .intro-text .skills {
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
     position: absolute;
-    top: 50%;
+    top: 33%;
     width: 100%;
     height: 20px;
     margin-top: -12px;
@@ -511,7 +511,6 @@ footer .footer-below {
 .main section {
 	padding: 0 0;
 }
-S
 
 
 .highlight {
