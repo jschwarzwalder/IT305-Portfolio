@@ -349,7 +349,7 @@
 		<div class="row">
 		<hr class="star-primary">
 			<div class="col-lg-4 col-lg-offset-4 text-center">
-				<a href="resume.pdf" target="_blank"><i class="fa fa-fw fa-file-pdf-o"></i> Download</a>
+				<h5><a href="resume.pdf" target="_blank"><i class="fa fa-fw fa-file-pdf-o"></i> Download</a></h5>
 			</div>
 		</div>
 	</div><!--/.container -->
