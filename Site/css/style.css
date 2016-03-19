@@ -8,14 +8,12 @@ body {
     overflow-x: hidden;
     background-color: #7DB9B3;
     color:#D8D7C3;
+	font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 p {
     font-size: 20px;
 }
 
-p.small {
-    font-size: 16px;
-}
 
 a,
 a:hover,
@@ -33,7 +31,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Oswald,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 /* Stylings to change colors for every other section */
@@ -137,7 +135,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Oswald,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
 }
@@ -145,6 +143,7 @@ header .intro-text .name {
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
+	font-family: Oswald,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 @media(min-width:768px) {
@@ -190,7 +189,7 @@ header .intro-text .skills {
 
 .navbar {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Oswald,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     background-color:#0E2E3B;
 }
@@ -511,4 +510,15 @@ footer .footer-below {
 }
 .main section {
 	padding: 0 0;
+}
+S
+
+
+.highlight {
+	text-transform: uppercase;
+    font-family: Oswald,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+	margin: 10px auto;
+	background-color: #0E2E3B;
+	color: #DFEBED;
 }

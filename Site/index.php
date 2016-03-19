@@ -43,12 +43,9 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-
-   
-
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic' rel='stylesheet' type='text/css'>
+	
 </head>
 
 <body id="page-top" class="index">
@@ -228,7 +225,7 @@
 		<div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Experience</h2>
-					<!--Download Resume as PDF -->
+					
 					<hr class="star-primary">
 					
                 </div>
@@ -240,66 +237,66 @@
 				</div>
 				
 				<div class="col-lg-6">
-					<p><t>Web Developer</t><br/>
-						Class Project - Kent Food Bank<br/>
-					</p>
-					<p><t>Scrum Master for 3 Sprints. </t>
-					<more>Worked on team of 3 to implement website using Bootstrap, PHP, jQuery, and MySQL. 
+					<h5>Web Developer</h5>
+					<h5>	Class Project - Kent Food Bank<br/>
+					</h5>
+					<p>Scrum Master for 3 Sprints. 
+					Worked on team of 3 to implement website using Bootstrap, PHP, jQuery, and MySQL. 
 					<br>Utilized Usability tests and Paper Prototypes for Design.
 					<br>Team employed Agile methodologies to assign roles on Waffle.io. 
-					<br>Used GitHub Repository for version control. </more></p>
+					<br>Used GitHub Repository for version control. </p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>JANUARY 2016 - MARCH 2016</sm></p>
+					<h5>JANUARY 2016 - MARCH 2016</h5>
 				</div>
 				
 				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Web Developer</t><br/>
-						Culture Scout<br/>
-					</p>
-					<p><more>Installed and built a customized theme for WordPress that utilized BadgeOS and BuddyPress. </more></p>
+					<h5>Web Developer</h5>
+					<h5>	Culture Scout<br/>
+					</h5>
+					<p>Installed and built a customized theme for WordPress that utilized BadgeOS and BuddyPress. </p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>DECEMBER 2015</sm></p>
+					<h5>DECEMBER 2015</h5>
 				</div>
 				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Producer</t><br/>
-						Cat's Pajamas <br/>
-					</p>
-					<p><more>Worked with programmers to build a game in Unity within 72 Hours. 
+					<h5>Project Manager</h5>
+					<h5>Cat's Pajamas <br/>
+					</h5>
+					<p>Worked with programmers to build a game in Unity within 72 Hours. 
 					<br>Designed Levels, performed QA tests, promoted game in community.  
-					</more></p>
+					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>AUGUST 2015 - PRESENT</sm></p>
+					<h5>AUGUST 2015 - PRESENT</h5>
 				</div>
 	
 				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Web Master</t><br/>
-						Barony of Wyewood <br/>
-					</p>
-					<p><more>Manage listserv for board members. 
+					<h5>Web Master</h5>
+					<h5>Barony of Wyewood <br/>
+					</h5>
+					<p>Manage listserv for board members. 
 					<br>Organize information on web for better usability. 
 					<br>Kept WordPress site up to date with plug-ins and content management.
-					</more></p>
+					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>JANUARY 2015 - PRESENT</sm></p>
+					<h5>JANUARY 2015 - PRESENT</h5>
 				</div>
 				
 				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Librarian</t><br/>
-						Pierce County Library System <br/>
-					</p>
-					<p><more>Developed and Implemented Services for 19 locations. 
+					<h5>Librarian</h5>
+					<h5>	Pierce County Library System <br/>
+					</h5>
+					<p>Developed and Implemented Services for 19 locations. 
 					<br>Provided Outreach Support to 13 School Districts. 
 					<br>Lead 3 Annual Projects. Served on cross departmental committees. 
 					<br>Worked with end user to troubleshoot common technology issues.
 					<br>Tested website features and desktop images before staff launch. 
-					</more></p>
+					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>MAY 2007 - PRESENT</sm></p>
+					<h5>MAY 2007 - PRESENT</h5>
 				</div>
 		</div><!--/.row -->
 		<br>
@@ -313,38 +310,39 @@
 					<h5>EDUCATION</h5>
 				</div>
 				<div class="col-lg-6">
-					<p><t>Web Application Development</t><br/>
-						Green River Community College <br/>
+					<h5>Web Application Development</h5>
+						<p>Green River Community College <br/>
 						<i>1 Years Course</i>
 					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>GRADUATING IN MARCH 2017</sm><br/>
-					<imp><sm>IN PROGRESS</sm></imp>
+					<h5>GRADUATING IN MARCH 2017</h5>
+					<h5><span class="highlight ">IN PROGRESS</span></h5>
 					</p>
 				</div>
 	
 				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Master of Information Science</t><br/>
-						Indiana University <br/>
+					<h5>Master of Information Science</h5>
+						<p>Indiana University <br/>
 						<i>2 Years Course</i>
 					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>MAY 2007</sm></p>
+					<h5>MAY 2007</h5>
 				</div>
 				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Bachelors of Science</t><br/>
-						Butler University <br/>
+					<h5>Bachelors of Science</h5>
+						<p>Butler University <br/>
 						<i>4 Years Course</i>
 					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>MAY 2005</sm></p>
+					<h5>MAY 2005</h5>
 				</div>
 	
 		</div><!--/.row -->
 	</div><!--/.container -->
+	<!--Download Resume as PDF -->
 	<div class="container desc">
 		<div class="row">
 		<hr class="star-primary">
