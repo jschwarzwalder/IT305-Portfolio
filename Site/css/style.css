@@ -500,3 +500,11 @@ footer .footer-below {
 .scroll-top .btn:focus {
     outline: 0;
 }
+
+.main {
+    padding: 2% 2%;
+    background-color: #DFEBED;
+    margin: 2% auto;
+    width: 100%;
+    color:black;
+    box-shadow: 2px 2px 2.5px black;

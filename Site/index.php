@@ -28,7 +28,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+	<link rel="icon" href="img/icons/tree.ico">
+	
     <title>Jami Schwarzwalder</title>
 	
 	<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -222,14 +223,17 @@
 	<!--RESUME SECTION -->
 	<section id="resume" name="resume">
 	<!--Resume Section -->
+	
 	<div class="container desc">
 		<div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Experience</h2>
-                    <hr class="star-primary">
+					<!--Download Resume as PDF -->
+					<hr class="star-primary">
 					
                 </div>
             </div>
+			
             <div class="row">
 				<div class="col-lg-2 col-lg-offset-1">
 					<h5>WORK</h5>
@@ -299,7 +303,7 @@
 				</div>
 		</div><!--/.row -->
 		<br>
-		<hr>
+		<hr class="star-primary">
 	</div><!--/.container -->
 	<!--EDUCATION DESCRIPTION -->
 	<div class="container desc">
@@ -340,7 +344,14 @@
 				</div>
 	
 		</div><!--/.row -->
-		
+	</div><!--/.container -->
+	<div class="container desc">
+		<div class="row">
+		<hr class="star-primary">
+			<div class="col-lg-4 col-lg-offset-4 text-center">
+				<a href="resume.pdf" target="_blank"><i class="fa fa-fw fa-file-pdf-o"></i> Download</a>
+			</div>
+		</div>
 	</div><!--/.container -->
 	</section>
 	
@@ -452,6 +463,10 @@
                             </li>
 							
                         </ul>
+                    </div>
+					<div class="footer-col col-md-2 ">
+                        <h3>Login</h3>
+						<p><a href="admin/" class="btn-social btn-outline"><i class="fa fa-fw fa-sign-in"></i></a></p>
                     </div>
                    
             </div>
