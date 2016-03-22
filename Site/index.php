@@ -155,7 +155,7 @@
                     </a>
                 </div>
 				<div class="col-sm-4 portfolio-item">
-                    <a href="http://dev.gogrowabroad.com/" class="portfolio-link" target="_blank" data-toggle="modal">
+                    <a href="http://jschwarzwalder.greenrivertech.net/wp/badge/vikings-2/" class="portfolio-link" target="_blank" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-plus-circle fa-3x"></i>
@@ -190,7 +190,7 @@
                
             </div>
         </div>
-		<div class="col-xs-12 text-center"> <a href="http://jschwarzwalder.neocities.org/projects.html">See more</a></div>
+		<div class="col-xs-12 text-center"> <a href="http://jschwarzwalder.neocities.org/projects.html" target="_blank">See more</a></div>
     </section>
 
     <!-- About Section -->
