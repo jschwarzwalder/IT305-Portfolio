@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="img/icons/tree.ico">
+	
+	<title>Object Pool</title>
+	
+	<!-- Bootstrap Core CSS - Uses Bootswatch Paper Theme: http://bootswatch.com/paper/ -->
+    <link href="css/object/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Share+Tech+Mono" rel="stylesheet">
+	
+</head>
+
+<body id="page-top" class="index" >
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Object Pool Design</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+					
+                   
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="#use">Use</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="#pattern">Pattern</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="#code">Code</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="#sources">Sources</a>
+                    </li>
+                   
+					
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<div class="page-header" id="banner">
+<section class="main" id="about">
+	<div class="container jumbotron">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>What is an Object Pool</h2>
+				
+			</div>
+		</div>
+		 <div class="row">
+			<div class="col-lg-8 col-lg-offset-2 ">
+				<p>Object Pool is a design pattern that allows you to reuse objects you are repeatedly creating and destroying in your code. Instead of destroying the object you add it to a waiting queue to be used again when needed next. This can reduce memory spikes from random garbage collection and can create more consistent memory management.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 ">
+				<p><img src="img/Royal_Rumpus_MP7.png" class="img-responsive" /></p>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+<section class="secondary" id="use">
+        <div class="container jumbotron">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>How to Use Object Pool Pattern</h2>
+                    
+                </div>
+            </div>
+			 <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 ">	
+
+					<p>Use: When creating an object is expensive like reading from a file or accessing a database.
+					Object Pool is best when you are repeatedly creating and destroying many identical objects. 
+					If you are only using an object once in your code, object pool will not save you anything. It will add more unnecessary complexity and memory overhead.</p>
+
+					<p>Best Practices are to create just enough objects. Some implementations allow the pool to grow if an object isn’t available, however you could waste memory if there is not a consistent amount of objects needed by your program. If you do want to allow your pool to grow, add a max size to prevent memory leaks.  If you are using multi-threading and your pool is at max size when a request is made it can wait for one to become available. However with threading, you might want your object pool to be a singleton for each type of object you want to build a pool. </p>
+
+					<p>Like Factory Pattern the Object Pool creates the objects for you. An object Pool can only consist of similar objects of the same type. The important thing is that they need to be interchangeable.</p>
+
+				</div>
+			</div>
+		
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 ">
+				
+				<p>Store and Array of objects.<br /><img src="img/goombaArray.png" class="img-responsive" /></p>
+				<p>Keep a list of objects not in use.<br /><img src="img/goombaList.png" class="img-responsive" /></p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="main" id="pattern">
+        <div class="container jumbotron">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>How to Create Object Pool Pattern</h2>
+                    
+                </div>
+            </div>
+			 <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 ">
+					<p>An object pool is an object that stores objects in a data structure to create object permanence. Inside there is a mechanism to identify which objects are not currently in use. There should be a public method to request an object that will return an object that is available for reuse. A second public method should allow an object to be returned, thus adding it back to the list of unused objects and resetting the defaults on the object.</p>
+					<p>Any object can be stored in an object pool given reasonable default values that can be reset with less work than it would take to just make a new object.</p>
+					<p>The Third object used in this pattern is the requesting object. This is a controller that uses whichever objects are stored in your pool. It needs to make sure it returns the object when it is finished or this pattern doesn’t work. It also needs to handle the case of an object no being available for use when requested. </p>
+
+				</div>
+			</div>
+		
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 ">
+				<p class="text-center"><img src="img/UML.png" class="center img-responsive" /></p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="secondary" id="code">
+        <div class="container desc">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Code Samples</h2>
+                    
+                </div>
+            </div>
+			<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 ">
+			<ul class="nav nav-tabs">
+			  <li class="active"><a data-toggle="tab" href="#object">Object</a></li>
+			  <li><a data-toggle="tab" href="#interface">Interface</a></li>
+			  <li><a data-toggle="tab" href="#pool">Pool</a></li>
+			  <li><a data-toggle="tab" href="#controller">Controller</a></li>
+			</ul>
+			 <div class="tab-content">
+			  <div id="object" class="tab-pane fade in active">
+                
+				<div class="panel panel-default">
+				  <div class="panel-heading">Object to be Pooled</div>
+				  <div class="panel-body">
+				 /**<br />
+				 * Jami Schwarzwalder<br />
+				 * Enemy.java<br />
+				 * <br />
+				 */<br />
+				<p>package edu.greenriver.it;<br />
+				<br />
+				import java.awt.geom.Point2D;<br />
+				import java.awt.image.BufferedImage;<br />
+				import java.io.File;<br />
+				import java.io.IOException;<br />
+				<br />
+				import javax.imageio.ImageIO;<br />
+				</p>
+				<p>
+				public class Enemy {<br />
+				<br />
+					private Point2D position;<br />
+					private BufferedImage appearance;<br />
+				<br />
+					public Enemy(Point2D position, String apperanceLocation) {<br />
+				
+&nbsp;&nbsp;&nbsp;&nbsp;						&nbsp;&nbsp;&nbsp;&nbsp;this.position = position;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;						&nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;this.appearance = ImageIO.read(new File(apperanceLocation));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;						&nbsp;&nbsp;&nbsp;&nbsp;} catch (IOException e) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;						&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(e);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;						}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;				<br />
+					}<br />
+				<br />
+					public void start() {<br />
+						<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;//begin animation<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;//move toward hero<br />
+					}<br />
+				<br />
+					public void destroy() {<br />
+						<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;//add points to score<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;//destroy child objects<br />
+						<br />
+					}<br />
+				<br />
+					public void SetPosition(Point2D position) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;this.position = position;<br />
+					}<br />
+					<br />
+					public Point2D GetPosition(){<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;return position;<br />
+					}<br />
+					<br />
+					public BufferedImage GetAppearance(){<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;return appearance;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+				<br />
+				}
+				</p>
+						</div>
+				</div>
+			</div>
+			
+		
+			<div id="interface" class="tab-pane fade  ">
+                
+				<div class="panel panel-default">
+				  <div class="panel-heading"> Object Pool Interface</div>
+				  <div class="panel-body">
+				 /**<br />
+				 * Jami Schwarzwalder<br />
+				 * IObjectPool.java<br />
+				 * <br />
+				 */<br />
+				 <br />
+				 package edu.greenriver.it;<br />
+				<br />
+				public interface IObjectPool&lt;T&gt; {<br />
+				<br />		
+				&nbsp;&nbsp;&nbsp;&nbsp;public T getObject ();<br />
+					<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;public void returnObject(T object);<br />
+				<br />
+				}<br />
+				</div>
+				</div>
+				
+			</div>
+			
+			
+			 <div id="pool" class="tab-pane fade  ">
+               
+				<div class="panel panel-default">
+				  <div class="panel-heading"> Object Pool for Specific Object</div>
+				  <div class="panel-body">
+				 /**<br />
+				 * Jami Schwarzwalder<br />
+				 * EnemyPool.java<br />
+				 * <br />
+				 */<br />
+				 <br />
+				 package edu.greenriver.it;<br />
+				<br />
+				import java.awt.geom.Point2D;<br />
+				import java.util.LinkedList;<br />
+				<br />
+				public class EnemyPool implements IObjectPool&lt;Enemy&gt; {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// starting values for Enemy Object<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;private Point2D startingPosition;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;private String appearanceLocation;<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// Option 1 is to generate objects when initialized<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;private int poolSize = 15;<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// Option 2 is to generate objects when requested and none are available<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;private int maxPoolSize = 50;<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// create list to store objects<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;private LinkedList&lt;Enemy&gt; waitingObjectPool = new LinkedList&lt;Enemy&gt;();<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;private Enemy[] enemyPool = new Enemy[maxPoolSize];<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;public EnemyPool(Point2D startingPosition, String appearanceLocation) {<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.startingPosition = startingPosition;<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.appearanceLocation = appearanceLocation;<br />
+<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; poolSize; i++) {<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createEnemy(startingPosition, appearanceLocation, i);<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+					&nbsp;&nbsp;&nbsp;&nbsp;private void createEnemy(Point2D startingPosition, String appearanceLocation, int i) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;enemyPool[i] = new Enemy(startingPosition, appearanceLocation);<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;waitingObjectPool.add(enemyPool[i]);<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;@Override<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;public Enemy getObject() {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;if (waitingObjectPool.isEmpty()) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	if (poolSize &lt; maxPoolSize) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createEnemy(startingPosition, appearanceLocation, poolSize);<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;poolSize += 1;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;return waitingObjectPool.removeFirst();<br />
+
+					&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;@Override<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;public void returnObject(Enemy object) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;object.SetPosition(startingPosition);<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;waitingObjectPool.add(object);<br />
+<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+<br />
+				}<br />
+				</div>
+				</div>
+			</div>
+			
+
+
+		 <div id="controller" class="tab-pane fade ">
+                
+				<div class="panel panel-default">
+				  <div class="panel-heading">Controller Object</div>
+				  <div class="panel-body">
+				 /**<br />
+				 * Jami Schwarzwalder<br />
+				 * GameManager.java<br />
+				 * <br />
+				 */<br />
+				 <br />
+				 package edu.greenriver.it;<br />
+				<br />
+				import java.awt.geom.Point2D;<br />
+				<br />
+				public class GameManager {<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {<br />
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String goombaImage = "Goomba.png";<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enemy[] enemies = new Enemy[10];<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Create a line of 10 goombas at ground level<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; enemies.length; i++){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i] = new Enemy(new Point2D.Float(i * 10, 10), goombaImage);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Hero engages with enemy and kills them all<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; enemies.length; i++){<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i] = null;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Hero continues in game and encounters more enemies<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//This time we have decided we want to reuse enemies<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//so we will use an object pool of enemies<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IObjectPool&lt;Enemy&gt; enemyPool = new EnemyPool(new Point2D.Float(-10, -10), goombaImage);<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; enemies.length; ++i){<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i] = enemyPool.getObject();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemies[i].SetPosition(new Point2D.Float(i *10, 10));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Hero engages with the first enemy and destroys it<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//enemy will not be destroyed but will be moved offscreen and made available for reuse later<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemyPool.returnObject(enemies[0]); <br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//There was one more enemy lurking offscreen<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Object pool will reuse the destroyed enemy so that the image doesn't need to be reloaded<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enemy supriseEnemy = enemyPool.getObject();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supriseEnemy.SetPosition(new Point2D.Float(100, 10));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+}<br />
+				</div>
+				</div>
+		</div>
+
+			
+		</div> <!-- tab-content -->
+	</div>
+</section>
+
+<section class="secondary" id="sources">
+        <div class="container desc">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Resources Used</h2>
+                    
+                </div>
+            </div>
+			<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 ">
+			  <p>Baby Luigi. "Mario Party 7 Image." MarioWiki. Nintendo, 24 Sept. 2012. Web. 02 Dec. 2016.</P>
+				<p>Davis, Thomas E. "Build Your Own ObjectPool in Java to Boost App Speed." JavaWorld. JavaWorld, 1 June 1998. Web. 29 Nov. 2016.</p>
+				<p>Geig, Mike. "Object Pooling." Unity Learning Pages. Unity 3D, 7 Apr. 2014. Web. 29 Nov. 2016.</p>
+				<p>Kumar, Abhishek. "Creating Object Pool in Java." DZone. Performance Zone, 14 Apr. 2014. Web. 29 Nov. 2016.</p>
+				<p>Lynch, Ennis Ray, Jr. "C# Object Pooling." CodeProject. N.p., 12 Oct. 2007. Web. 29 Nov. 2016.</p>
+				<p>Nystrom, Robert. "Object Pool." Game Programming Patterns. Genever Benning, 2 Nov. 2014. Web. 29 Nov. 2016.</p>
+			  <p>"Object Pool Pattern." Object Oriented Design. N.p., n.d. Web. 02 Dec. 2016.</p>
+				<p>Shvets, Alexander. "Object Pool." Design Patterns Explained Simply. SourceMaking, 31 July 2015. Web. 29 Nov. 2016.</p>
+        <p>Scarterfield, Jeff. "Goomba." How to Draw Cartoons Online. Web. 29 Nov. 2016.</p>			</div>
+		
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-right">
+                        Copyright &copy; Jami Schwarzwalder 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
